@@ -1,0 +1,1 @@
+const audio1 = new Audio("../assets/songs/Baka_Mitai.mp3")
