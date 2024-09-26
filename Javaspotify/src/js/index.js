@@ -1,3 +1,13 @@
-const audio1 = new Audio("../assets/songs/Baka_Mitai.mp3");
-const audio2 = new Audio("../assets/songs/In_Full_Blast.mp3");
-const audio3 = new Audio("../assets/songs/Yi_jian_mei.mp3");
+import songs from '../assets/songs/*.mp3';
+
+Object.keys(songs);
+
+const map = { };
+
+let aux = 1;
+for (var key of Object.keys(songs)) {
+    map[".item-" + aux++] = "../assets/songs/" + key + ".mp3"
+}
+
+const player = new Player(map);
+console.log(map)

@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    height: 100vh;
+    background-image: linear-gradient(red, rgb(209, 209, 0));
+}
+
+.cover {
+    height: 200px;
+    width: 200px;
+    background: aqua;
+    border: 1px solid black;
+    background-size: cover;
+}
+
+.cv1 {
+    background-image: url("/Cover1_kiryu.e31e8217.png");
+}
+
+.cv2 {
+    background-image: url("/Cover2_gaiden.5c366ac0.jpeg");
+    background-position: 256px;
+}
+
+.cv3 {
+    background-image: url("/Cover3_yi_jian_mei.789a6bcb.jpg");
+}
+
+/*# sourceMappingURL=/styles.b61e60ae.css.map */
