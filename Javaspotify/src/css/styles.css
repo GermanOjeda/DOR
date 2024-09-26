@@ -17,14 +17,14 @@ body {
 }
 
 .cv1 {
-    background-image: url("../assets/img/kiryu.png");
+    background-image: url("../assets/img/Cover1_kiryu.png");
 }
 
 .cv2 {
-    background-image: url("../assets/img/gaiden.jpeg");
+    background-image: url("../assets/img/Cover2_gaiden.jpeg");
     background-position: 256px;
 }
 
 .cv3 {
-    background-image: url("../assets/img/yi\ jian\ mei.jpg");
+    background-image: url("../assets/img/Cover3_yi_jian_mei.jpg");
 }
