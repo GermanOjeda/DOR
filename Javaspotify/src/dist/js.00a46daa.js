@@ -129,21 +129,39 @@ module.exports = {
   "Song2_In_Full_Blast": require("./Song2_In_Full_Blast.mp3"),
   "Song3_Yi_jian_mei": require("./Song3_Yi_jian_mei.mp3")
 };
-},{"./Song1_Baka_Mitai.mp3":"assets/songs/Song1_Baka_Mitai.mp3","./Song2_In_Full_Blast.mp3":"assets/songs/Song2_In_Full_Blast.mp3","./Song3_Yi_jian_mei.mp3":"assets/songs/Song3_Yi_jian_mei.mp3"}],"js/index.js":[function(require,module,exports) {
+},{"./Song1_Baka_Mitai.mp3":"assets/songs/Song1_Baka_Mitai.mp3","./Song2_In_Full_Blast.mp3":"assets/songs/Song2_In_Full_Blast.mp3","./Song3_Yi_jian_mei.mp3":"assets/songs/Song3_Yi_jian_mei.mp3"}],"js/Player.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+var Player = exports.default = /*#__PURE__*/_createClass(function Player(songs) {
+  _classCallCheck(this, Player);
+  this.songs = songs;
+});
+},{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _ = _interopRequireDefault(require("../assets/songs/*.mp3"));
+var _Player = _interopRequireDefault(require("../js/Player.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 Object.keys(_.default);
 var map = {};
 var aux = 1;
 for (var _i = 0, _Object$keys = Object.keys(_.default); _i < _Object$keys.length; _i++) {
   var key = _Object$keys[_i];
-  map[".item-" + aux++] = "../assets/songs/" + key + ".mp3";
+  map[".item-" + aux++] = key;
 }
-var player = new Player(map);
+var player = new _Player.default(map);
 console.log(map);
-},{"../assets/songs/*.mp3":"assets/songs/*.mp3"}],"../../../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../assets/songs/*.mp3":"assets/songs/*.mp3","../js/Player.js":"js/Player.js"}],"../../../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -168,7 +186,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45185" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36401" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

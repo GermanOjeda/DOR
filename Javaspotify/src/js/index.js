@@ -1,4 +1,5 @@
 import songs from '../assets/songs/*.mp3';
+import Player from '../js/Player.js'
 
 Object.keys(songs);
 
@@ -6,7 +7,7 @@ const map = { };
 
 let aux = 1;
 for (var key of Object.keys(songs)) {
-    map[".item-" + aux++] = "../assets/songs/" + key + ".mp3"
+    map[".item-" + aux++] = key
 }
 
 const player = new Player(map);
