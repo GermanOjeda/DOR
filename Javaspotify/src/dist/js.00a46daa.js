@@ -129,13 +129,32 @@ module.exports = {
   "Song2_In_Full_Blast": require("./Song2_In_Full_Blast.mp3"),
   "Song3_Yi_jian_mei": require("./Song3_Yi_jian_mei.mp3")
 };
-},{"./Song1_Baka_Mitai.mp3":"assets/songs/Song1_Baka_Mitai.mp3","./Song2_In_Full_Blast.mp3":"assets/songs/Song2_In_Full_Blast.mp3","./Song3_Yi_jian_mei.mp3":"assets/songs/Song3_Yi_jian_mei.mp3"}],"js/Player.js":[function(require,module,exports) {
+},{"./Song1_Baka_Mitai.mp3":"assets/songs/Song1_Baka_Mitai.mp3","./Song2_In_Full_Blast.mp3":"assets/songs/Song2_In_Full_Blast.mp3","./Song3_Yi_jian_mei.mp3":"assets/songs/Song3_Yi_jian_mei.mp3"}],"js/Song.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+var Song = exports.default = /*#__PURE__*/_createClass(function Song() {
+  _classCallCheck(this, Song);
+  console.log("placeholder");
+});
+},{}],"js/Player.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _Song = _interopRequireDefault(require("../js/Song.js"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -157,11 +176,12 @@ var Player = exports.default = /*#__PURE__*/_createClass(function Player(map) {
       key = _Object$entries$_i[0],
       value = _Object$entries$_i[1];
     // crea instancia para Song
+    var song = new _Song.default();
     // invoca la funcion para reproducir la canción
     aux++;
   }
 });
-},{}],"js/index.js":[function(require,module,exports) {
+},{"../js/Song.js":"js/Song.js"}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _ = _interopRequireDefault(require("../assets/songs/*.mp3"));
@@ -200,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35441" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36997" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
