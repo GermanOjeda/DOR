@@ -152,12 +152,11 @@ var Player = exports.default = /*#__PURE__*/_createClass(function Player(songs) 
 var _ = _interopRequireDefault(require("../assets/songs/*.mp3"));
 var _Player = _interopRequireDefault(require("../js/Player.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-Object.keys(_.default);
 var map = {};
 var aux = 1;
 for (var _i = 0, _Object$keys = Object.keys(_.default); _i < _Object$keys.length; _i++) {
   var key = _Object$keys[_i];
-  map[".item-" + aux++] = key;
+  map[".item-" + aux++] = _.default[key];
 }
 var player = new _Player.default(map);
 console.log(map);
@@ -186,7 +185,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36401" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38363" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

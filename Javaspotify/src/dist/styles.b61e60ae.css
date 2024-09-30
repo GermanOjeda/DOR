@@ -5,7 +5,7 @@ body {
     align-items: center;
     gap: 5px;
     height: 100vh;
-    background-image: linear-gradient(red, rgb(209, 209, 0));
+    background-image: url('/backgrounds.dbabe010.jpg');
 }
 
 .cover {
