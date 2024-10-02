@@ -188,7 +188,10 @@ var Player = exports.default = /*#__PURE__*/_createClass(function Player(map) {
     var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
       key = _Object$entries$_i[0],
       value = _Object$entries$_i[1];
-    var song = new _Song.default(key, value);
+    var s_key = key;
+    var s_value = value;
+    var s_cover = ".cv".concat(aux);
+    var song = new _Song.default(s_key, s_value);
     (0, _Song.play_song)(song);
     aux++;
   }
@@ -232,7 +235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44763" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33947" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

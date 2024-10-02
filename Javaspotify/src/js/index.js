@@ -1,5 +1,5 @@
 import songs from '../assets/songs/*.mp3';
-import Player from '../js/Player.js'
+import Player from '../js/Player.js';
 
 const map = { };
 
