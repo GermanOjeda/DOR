@@ -9,6 +9,7 @@ body {
 }
 
 .flex {
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +20,7 @@ body {
     background: aqua;
     border: 1px solid rgb(221, 206, 0);
     background-size: cover;
+    position: absolute;
 }
 
 .cv1 {
@@ -35,10 +37,13 @@ body {
 }
 
 .vinyl {
+    transform: translate(0,0);
     background-image: radial-gradient(circle, rgb(104, 40, 40) 10%, rgb(26, 26, 26) 90%);
     border-radius: 50%;
     width: 200px;
     height: 200px;
+    z-index: -1;
+    transition: transform 800ms;
 }
 
 .detail {
@@ -61,5 +66,7 @@ body {
     width: 20px;
     height: 20px;
 }
+
+
 
 /*# sourceMappingURL=/styles.b61e60ae.css.map */
