@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(60, 185, 185);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
