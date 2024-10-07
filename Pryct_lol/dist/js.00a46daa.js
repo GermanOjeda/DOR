@@ -153,47 +153,75 @@ function getChamps() {
   return _getChamps.apply(this, arguments);
 }
 function _getChamps() {
-  _getChamps = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+  _getChamps = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
     var url, data, key;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
         case 0:
           url = "https://ddragon.leagueoflegends.com/cdn/13.18.1/data/es_ES/champion.json";
-          _context2.next = 3;
+          _context3.next = 3;
           return fetch(url).then(/*#__PURE__*/function () {
-            var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(response) {
-              return _regeneratorRuntime().wrap(function _callee$(_context) {
-                while (1) switch (_context.prev = _context.next) {
+            var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(response) {
+              return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+                while (1) switch (_context2.prev = _context2.next) {
                   case 0:
-                    _context.next = 2;
+                    _context2.next = 2;
                     return response.json();
                   case 2:
-                    return _context.abrupt("return", _context.sent.data);
+                    return _context2.abrupt("return", _context2.sent.data);
                   case 3:
                   case "end":
-                    return _context.stop();
+                    return _context2.stop();
                 }
-              }, _callee);
+              }, _callee2);
             }));
             return function (_x) {
-              return _ref.apply(this, arguments);
+              return _ref2.apply(this, arguments);
             };
           }());
         case 3:
-          data = _context2.sent;
+          data = _context3.sent;
           for (key in data) {
             champions.push(new _champion.default(data[key]));
           }
         case 5:
         case "end":
-          return _context2.stop();
+          return _context3.stop();
       }
-    }, _callee2);
+    }, _callee3);
   }));
   return _getChamps.apply(this, arguments);
 }
 getChamps();
 console.log(champions);
+var showChampions = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    var champs, i, aux, tipo1, tipo2;
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          champs = document.getElementById("champions");
+          for (i = 0; i < pokemons.length; i++) {
+            aux = 0;
+            while (aux != pokemons[i].pkm_type.length) {
+              if (aux == 0) tipo1 = pokemons[i].pkm_type[aux].type.name;
+              if (aux == 1) tipo2 = pokemons[i].pkm_type[aux].type.name;else tipo2 = "";
+              aux++;
+            }
+            // Para cada Pokemon, se crea una tarjeta con imágenes (vista frontal y trasera), el nombre y los tipos
+            // Esta estructura HTML se añade dinámicamente al contenedor pokedex
+            pokedex.innerHTML += "<div class=\"card\">\n                                    <img src=\"".concat(pokemons[i].pkm_back, "\">\n                                    <img class=\"front\" src=\"").concat(pokemons[i].pkm_front, "\"><br>\n                                    ").concat(pokemons[i].id, ". ").concat(pokemons[i].name, "<br>\n                                    <div class=\"extra_info\">\n                                    Weight: ").concat(pokemons[i].pkm_weight, " <br> Base Experience: ").concat(pokemons[i].pkm_base_exp, "\n                                    <div class=\"types\">\n                                        ").concat(tipo1, " ").concat(tipo2, "\n                                    </div>\n                                </div>");
+          }
+        case 2:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee);
+  }));
+  return function showChampions() {
+    return _ref.apply(this, arguments);
+  };
+}();
 },{"./champion.js":"js/champion.js"}],"../../../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -219,7 +247,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38025" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33941" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
