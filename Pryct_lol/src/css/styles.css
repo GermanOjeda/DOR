@@ -22,7 +22,7 @@ body {
 
 .card:hover {
     display: inline-block;
-    animation: resizeChamp infinite 1s;
+    animation: resizeChamp 1s;
     animation-fill-mode: forwards;
 }
   
@@ -31,7 +31,7 @@ body {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1);
+    transform: scale(1.07);
   }
 }
   
