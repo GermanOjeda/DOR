@@ -205,7 +205,7 @@ var showChampions = /*#__PURE__*/function () {
           champs = document.getElementById("champions");
           for (_i = 0, _champions = champions; _i < _champions.length; _i++) {
             champion = _champions[_i];
-            champs.innerHTML += "<div class=\"card\">\n                                    <div class=\"card_top\">\n                                        <div class=\"champ_name\">\n                                            ".concat(champion.name, "\n                                        </div>\n                                        <div class=\"champ_title\">\n                                        ").concat(champion.title, "\n                                        </div>\n                                    </div>\n                                    <br>\n                                    <img src=\"").concat(champion.image, "\">\n                                    <br>\n                                    <div class=\"champ_role ").concat(champion.role, "\">\n                                        ").concat(champion.role, "\n                                    </div>\n                                    <div class=\"champ_stats\">\n                                        HP:").concat(champion.hp, " - Da\xF1o:").concat(champion.damage, "\n                                    </div>\n                                </div>");
+            champs.innerHTML += "<div class=\"card\">\n                                    <div class=\"card_top\">\n                                        <div class=\"champ_name\">\n                                            ".concat(champion.name, "\n                                        </div>\n                                        <div class=\"champ_title\">\n                                        ").concat(champion.title, "\n                                        </div>\n                                    </div>\n                                    <br>\n                                    <div class=\"champ_img\">\n                                        <img src=\"").concat(champion.image, "\">\n                                    </div>\n                                    <br>\n                                    <div class=\"champ_role ").concat(champion.role, "\">\n                                        ").concat(champion.role, "\n                                    </div>\n                                    <div class=\"champ_stats\">\n                                        <div class=\"champ_hp\">HP:").concat(champion.hp, "</div><div class=\"champ_dmg\">DMG:").concat(champion.damage, "</div>\n                                    </div>\n                                </div>");
           }
         case 2:
         case "end":
@@ -242,7 +242,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35117" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45909" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -29,13 +29,15 @@ const showChampions = async () => {
                                         </div>
                                     </div>
                                     <br>
-                                    <img src="${champion.image}">
+                                    <div class="champ_img">
+                                        <img src="${champion.image}">
+                                    </div>
                                     <br>
                                     <div class="champ_role ${champion.role}">
                                         ${champion.role}
                                     </div>
                                     <div class="champ_stats">
-                                        HP:${champion.hp} - Daño:${champion.damage}
+                                        <div class="champ_hp">HP:${champion.hp}</div><div class="champ_dmg">DMG:${champion.damage}</div>
                                     </div>
                                 </div>`
     }
