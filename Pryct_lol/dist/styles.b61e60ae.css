@@ -22,11 +22,11 @@ body {
 
 .card:hover {
     display: inline-block;
-    animation: resizeChamp 1s;
+    animation: zoom_in_Champ 1s;
     animation-fill-mode: forwards;
 }
   
-@keyframes resizeChamp {
+@keyframes zoom_in_Champ {
   0% {
     transform: scale(1);
   }
