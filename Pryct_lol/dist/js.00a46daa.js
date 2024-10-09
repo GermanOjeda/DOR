@@ -133,7 +133,7 @@ function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Can
 var Champion = exports.default = /*#__PURE__*/_createClass(function Champion(data) {
   _classCallCheck(this, Champion);
   this.name = data.name;
-  this.image = "https://ddragon.leagueoflegends.com/cdn/img/champion/loading" + data.id + "_0.jpg";
+  this.image = "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + data.id + "_0.jpg";
   this.title = data.title;
   this.role = data.tags[0];
   this.hp = data.stats.hp;
@@ -184,7 +184,9 @@ function _getChamps() {
           for (key in data) {
             champions.push(new _champion.default(data[key]));
           }
-        case 5:
+          _context3.next = 7;
+          return showChampions();
+        case 7:
         case "end":
           return _context3.stop();
       }
@@ -196,21 +198,14 @@ getChamps();
 console.log(champions);
 var showChampions = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var champs, i, aux, tipo1, tipo2;
+    var champs, _i, _champions, champion;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           champs = document.getElementById("champions");
-          for (i = 0; i < pokemons.length; i++) {
-            aux = 0;
-            while (aux != pokemons[i].pkm_type.length) {
-              if (aux == 0) tipo1 = pokemons[i].pkm_type[aux].type.name;
-              if (aux == 1) tipo2 = pokemons[i].pkm_type[aux].type.name;else tipo2 = "";
-              aux++;
-            }
-            // Para cada Pokemon, se crea una tarjeta con imágenes (vista frontal y trasera), el nombre y los tipos
-            // Esta estructura HTML se añade dinámicamente al contenedor pokedex
-            pokedex.innerHTML += "<div class=\"card\">\n                                    <img src=\"".concat(pokemons[i].pkm_back, "\">\n                                    <img class=\"front\" src=\"").concat(pokemons[i].pkm_front, "\"><br>\n                                    ").concat(pokemons[i].id, ". ").concat(pokemons[i].name, "<br>\n                                    <div class=\"extra_info\">\n                                    Weight: ").concat(pokemons[i].pkm_weight, " <br> Base Experience: ").concat(pokemons[i].pkm_base_exp, "\n                                    <div class=\"types\">\n                                        ").concat(tipo1, " ").concat(tipo2, "\n                                    </div>\n                                </div>");
+          for (_i = 0, _champions = champions; _i < _champions.length; _i++) {
+            champion = _champions[_i];
+            champs.innerHTML += "<div class=\"card\">\n                                    <div class=\"card_top\">\n                                        <div class=\"champ_name\">\n                                            ".concat(champion.name, "\n                                        </div>\n                                        <div class=\"champ_title\">\n                                        ").concat(champion.title, "\n                                        </div>\n                                    </div>\n                                    <br>\n                                    <img src=\"").concat(champion.image, "\">\n                                    <br>\n                                    <div class=\"champ_role ").concat(champion.role, "\">\n                                        ").concat(champion.role, "\n                                    </div>\n                                    <div class=\"champ_stats\">\n                                        HP:").concat(champion.hp, " - Da\xF1o:").concat(champion.damage, "\n                                    </div>\n                                </div>");
           }
         case 2:
         case "end":
@@ -247,7 +242,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33941" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43487" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
