@@ -3,7 +3,7 @@ header {
 }
 
 body{
-    background-color: black;
+    background-image: linear-gradient(black, rgb(129, 0, 90));
 }
 
 #champions {
@@ -24,12 +24,38 @@ body{
     margin: 5px;
 }
 
+.extra {
+    display: none;
+}
+
+.card:hover .extra {
+    display: contents;
+}
+
+.card:hover .champ_img {
+    display: none;
+}
+
+.card:hover .sprite {
+    display: contents;
+}
+
+.card:hover .extra_info {
+    display: contents;
+}
+
 .card:hover {
     display: inline-block;
     animation: zoom_in_Champ 1s;
+    animation: color_change 3s;
     animation-fill-mode: forwards;
 }
-  
+
+@keyframes color_change {
+    0% {background-color: rgba(179, 179, 179, 0.836);} 
+    100% {background-color: rgba(170, 157, 80, 0.836);}
+}
+
 @keyframes zoom_in_Champ {
   0% {
     transform: scale(1);
@@ -38,8 +64,6 @@ body{
     transform: scale(1.04);
   }
 }
-  
-
 
 .champ_name{
     color: gold;
@@ -49,6 +73,19 @@ body{
 .champ_title{
     color: gold;
     background-image: linear-gradient(rgb(158, 121, 65), rgb(91, 37, 122));
+}
+
+.champ_img {
+    display: contents;
+}
+
+.sprite {
+    display: none;
+}
+
+.extra_info {
+    display: none;
+    color: snow;
 }
 
 .Fighter {

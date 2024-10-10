@@ -138,6 +138,15 @@ var Champion = exports.default = /*#__PURE__*/_createClass(function Champion(dat
   this.role = data.tags[0];
   this.hp = data.stats.hp;
   this.damage = data.stats.attackdamage;
+  this.blurb = data.blurb;
+  this.sprite = "https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/" + data.id + ".png";
+  this.partype = data.partype;
+  this.mp = data.stats.mp;
+  this.movementspeed = data.stats.movespeed;
+  this.armor = data.stats.armor;
+  this.spellblock = data.stats.spellblock;
+  this.range = data.stats.attackrange;
+  this.attackspeed = data.stats.attackspeed;
 });
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
@@ -205,7 +214,7 @@ var showChampions = /*#__PURE__*/function () {
           champs = document.getElementById("champions");
           for (_i = 0, _champions = champions; _i < _champions.length; _i++) {
             champion = _champions[_i];
-            champs.innerHTML += "<div class=\"card\">\n                                    <div class=\"card_top\">\n                                        <div class=\"champ_name\">\n                                            ".concat(champion.name, "\n                                        </div>\n                                        <div class=\"champ_title\">\n                                        ").concat(champion.title, "\n                                        </div>\n                                    </div>\n                                    <br>\n                                    <div class=\"champ_img\">\n                                        <img src=\"").concat(champion.image, "\">\n                                    </div>\n                                    <br>\n                                    <div class=\"champ_role ").concat(champion.role, "\">\n                                        ").concat(champion.role, "\n                                    </div>\n                                    <div class=\"champ_stats\">\n                                        <div class=\"champ_hp\">HP:").concat(champion.hp, "</div><div class=\"champ_dmg\">DMG:").concat(champion.damage, "</div>\n                                    </div>\n                                </div>");
+            champs.innerHTML += "<div class=\"card\">\n                                    <div class=\"card_top\">\n                                        <div class=\"champ_name\">\n                                            ".concat(champion.name, "\n                                        </div>\n                                        <div class=\"champ_title\">\n                                        ").concat(champion.title, "\n                                        </div>\n                                    </div>\n                                    <br>\n                                    <div class=\"champ_img\">\n                                        <img src=\"").concat(champion.image, "\">\n                                    </div>\n                                    <div class=\"sprite\">\n                                        <img src=\"").concat(champion.sprite, "\">\n                                        <br>\n                                        <br>\n                                    </div>\n                                    <div class=\"extra\">\n                                        ").concat(champion.blurb, "\n                                        <br>\n                                    </div>\n                                    <br>\n                                    <div class=\"champ_role ").concat(champion.role, "\">\n                                        ").concat(champion.role, "\n                                    </div>\n                                    <div class=\"champ_stats\">\n                                        <div class=\"champ_hp\">HP:").concat(champion.hp, "</div> <div class=\"champ_dmg\">DMG:").concat(champion.damage, "</div>\n                                        <div class=\"extra_info\">\n                                            Recurso: ").concat(champion.partype, "\n                                            <br>\n                                            <br>\n                                            Cantidad de recurso: ").concat(champion.mp, "\n                                            <br>\n                                            <br>\n                                            Velocidad de movimiento: ").concat(champion.movementspeed, "\n                                            <br>\n                                            <br>\n                                            Armadura: ").concat(champion.armor, "\n                                            <br>\n                                            <br>\n                                            Defensa m\xE1gica: ").concat(champion.spellblock, "\n                                            <br>\n                                            <br>\n                                            Rango de ataque: ").concat(champion.range, "\n                                            <br>\n                                            <br>\n                                            Velocidad de ataque: ").concat(champion.attackspeed, "\n                                        </div>\n                                    </div>\n                                    \n                                </div>");
           }
         case 2:
         case "end":
@@ -242,7 +251,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33117" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33583" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
