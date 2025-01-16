@@ -28,7 +28,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
 
-    :hover {
+    &:hover {
     background-color: #fff;
     color: #333;
     }
@@ -201,7 +201,7 @@ color: #333;
         border: none;
         padding: 10px 20px;
         font-size: 16px;
-        :hover {
+        &:hover {
             background-color: #fff;
             color: #333;
         }
@@ -316,7 +316,7 @@ color: #333;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
-        :hover {
+        &:hover {
         background-color: #fff;
         color: #333;
         }
@@ -375,7 +375,7 @@ nav ul li {
     a {
     color: #333;
     text-decoration: none;
-        :hover {
+        &:hover {
         text-decoration: underline;
         }
     }
@@ -446,7 +446,7 @@ color: #333;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
-        :hover {
+        &:hover {
         background-color: #fff;
         color: #333;
         }
@@ -492,7 +492,7 @@ color: #fff;
     background-color: #f2f2f2;
     padding: 20px;
     margin-bottom: 20px;
-        :first-child {
+        &:first-child {
         background-color:
         #333;
         color: #fff;
