@@ -223,16 +223,20 @@ text-decoration: underline;
 }
 ```
 ```SCSS
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-    ul li a {
-    color: #333;
-    text-decoration: none;
+nav{
+    ul {
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     }
-    ul a:hover {
-    text-decoration: underline;
-    }
+}
+ul li a {
+color: #333;
+text-decoration: none;
 }
 ```
 Ejercicio 8
